@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.4",
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0"
+  }
+}

@@ -17,9 +17,13 @@ THEN I am taken to the corresponding section of the README
 */
 
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer");
+// need a dynamic Import
 const fs = require("fs");
+const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+/*const inquirer = require("inquirer");
+const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");*/
 // TODO: Create an array of questions for user input
 const questions = [
   {
@@ -71,48 +75,52 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-inquirer.prompt(questions).then((answers) => {
-  if (answers.title) === true {
-    text += `# ${answers.title}`;
-  }
-  if (answers.description) {
-    text += `# ${answers.description}`;
-  }
-  if (answers.installation) {
-    text += `# ${answers.installation}`;
-  }
-  if (answers.usage) {
-    text += `# ${answers.usage}`;
-  }
-  if (answers.contribution) {
-    text += `# ${answers.contribution}`;
-  }
-  if (answers.test) {
-    text += `# ${answers.test}`;
-  }
-  if (answers.license) {
-    text += `# ${answers.license}`;
-  }
-  if (answers.github) {
-    text += `# ${answers.github}`;
-  }
-  if (answers.email) {
-    text += `# ${answers.email}`;
-  }
-  fs.writeFile("README.md", text, (err) => {
-    if (err) throw err;
-    console.log("README.md created!");
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, function (err) {
+    console.log(data),
+      err ? console.log(err) : console.log("README.md succesfully created!");
   });
+}
+/*
+inquirer.prompt(questions).then((answers) => {
+  console.log(answers);
+  writeToFile("README.md", generateMarkdown(answers));
 });
 
-fs.writeFile("README.md", generateMarkdown(answers), (err) =>
-  err ? console.log(err) : console.log("Success!")
-);
+if (answers.title) {
+  text += `# ${answers.title}`;
+}
+if (answers.description) {
+  text += `# ${answers.description}`;
+}
+if (answers.installation) {
+  text += `# ${answers.installation}`;
+}
+if (answers.usage) {
+  text += `# ${answers.usage}`;
+}
+if (answers.contribution) {
+  text += `# ${answers.contribution}`;
+}
+if (answers.test) {
+  text += `# ${answers.test}`;
+}
+if (answers.license) {
+  text += `# ${answers.license}`;
+}
+if (answers.github) {
+  text += `# ${answers.github}`;
+}
+if (answers.email) {
+  text += `# ${answers.email}`;
+}
+*/
+// Function call to initialize app
 
-// TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions).then((data) => {
+  inquirer.prompt(questions).then(function (data) {
     writeToFile("README.md", generateMarkdown(data));
+    console.log(data.license);
   });
 }
 
