@@ -81,41 +81,6 @@ function writeToFile(fileName, data) {
       err ? console.log(err) : console.log("README.md succesfully created!");
   });
 }
-/*
-inquirer.prompt(questions).then((answers) => {
-  console.log(answers);
-  writeToFile("README.md", generateMarkdown(answers));
-});
-
-if (answers.title) {
-  text += `# ${answers.title}`;
-}
-if (answers.description) {
-  text += `# ${answers.description}`;
-}
-if (answers.installation) {
-  text += `# ${answers.installation}`;
-}
-if (answers.usage) {
-  text += `# ${answers.usage}`;
-}
-if (answers.contribution) {
-  text += `# ${answers.contribution}`;
-}
-if (answers.test) {
-  text += `# ${answers.test}`;
-}
-if (answers.license) {
-  text += `# ${answers.license}`;
-}
-if (answers.github) {
-  text += `# ${answers.github}`;
-}
-if (answers.email) {
-  text += `# ${answers.email}`;
-}
-*/
-// Function call to initialize app
 
 function init() {
   inquirer.prompt(questions).then(function (data) {
