@@ -10,10 +10,14 @@ Started by entering 'node index.js' in terminal
 
 # Learned how to use inquirer package to ask questions in terminal
 
+Video Link
+
+https://app.castify.com/view/528de698-bbbc-4c91-a3df-c21802f20238
+
 # ![Readme Generator](./Develop/Assets/screenshot.png)
 
 # Ryan Dong
 
 # Ryandong7@gmail.com
 
-# Project Link: https://arspeke8.github.io/Challenge-6-Weather-Dashboard/
+# Project Link: https://github.com/Arspeke8/challenge-9-Readme-Generator/tree/main
